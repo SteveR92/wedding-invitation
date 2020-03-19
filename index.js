@@ -23,10 +23,10 @@ app.use(adminRoutes)
 app.use(errorController.get404);
 
 // const PORT = process.env.PORT || 5000
-
+const url = process.env.MONGODB_URI || "mongodb+srv://Steve:wedding@ds161092.mlab.com:61092/heroku_995w3gh7"
 // app.listen(PORT, () => console.log(`Server started on port ${PORT}`))
 mongoose
-.connect('mongodb+srv://Steve:wedding@cluster0-jwig0.mongodb.net/test')
+.connect(url)
 .then(result => {
     console.log('Connected to Server')
     app.listen(5000)
