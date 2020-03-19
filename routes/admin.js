@@ -23,6 +23,9 @@ check('email')
                 )
         }
     })
+    .catch(err => {
+        console.log(err)
+    })
 }), 
 adminController.postAddGuest)
 
