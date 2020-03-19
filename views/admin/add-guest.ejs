@@ -1,0 +1,38 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/success.css">
+
+<body>
+
+    <div class="background">
+            <% if (errorMessage) { %>
+                <div class='error-message'><%= errorMessage %></div>
+            <% } %>
+        <img id="love-heart-img-inv" src="/images/hands-1.png" alt="love-heart-img" />
+        <div class="card">
+            <h2>RSVP</h2>
+            <div class="form-container">
+                <form class="product-form" action="/add-guest" method="POST" novalidate>
+                    <div class="form-el">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name">
+                    </div>
+                    <div class="form-el">
+                        <label for="guests">Number of +1s?</label>
+                        <input type="number" name="guest" id="guest" min="0" max="10" placeholder="0">
+                    </div>
+                    <div class="form-el">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email">
+                    </div>
+            </div>
+                    <div class="form-button">
+                        <button class="btn-add" type="submit"><i class="far fa-envelope"></i></button>                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+        
+
+
+<%- include('../includes/end.ejs') %>
