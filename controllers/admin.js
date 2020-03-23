@@ -2,34 +2,45 @@ const Guest = require('../models/guest')
 const nodemailer = require('nodemailer')
 const sendgrid = require('nodemailer-sendgrid-transport')
 const { validationResult } = require('express-validator/check')
+
+//SENDGRID API
+const dotenv = require('dotenv')
+dotenv.config()
+const API_KEY = process.env.API_KEY
 const transporter = nodemailer.createTransport(sendgrid({
     auth: {
-        api_key: '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'
+        api_key: `${API_KEY}`
     }
 })) 
+
+
 
 exports.getAddGuest = (req, res, next) => {
     res.render('admin/add-guest', {
         pageTitle: 'Guest Portal',
         path: '/add-guest',
-        errorMessage: null
+        errorMessage: null,
+        validationErrors: []
     })
 }
 
 exports.postAddGuest = (req, res, next) => {
-    
+
     const name = req.body.name
     const guests = req.body.guest
     const email = req.body.email
     const errors = validationResult(req)
+
+
     if (!errors.isEmpty()) {
         return res
         .status(422)
         .render('admin/add-guest', {
             pageTitle: 'Guest Portal',
             path: '/add-guest',
-            errorMessage: errors.array()[0].msg
-        })
+            errorMessage: errors.array()[0].msg,
+            validationErrors: errors.array()
+        }) 
     }
     const guest = new Guest({
         name: name,
