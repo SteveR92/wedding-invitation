@@ -1,14 +1,14 @@
 <%- include('../includes/head.ejs') %>
 <link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="/css/success.css">
+
 
 <body>
 
-    <div class="background">
+    <div class="container">
             <% if (errorMessage) { %>
                 <div class='error-message'><%= errorMessage %></div>
             <% } %>
-        <img id="love-heart-img-inv" src="https://weddingappsteveroe.s3.us-east-2.amazonaws.com/hands-1.png" alt="love-heart-img" />
+        <img id="love-heart-img" src="https://weddingappsteveroe.s3.us-east-2.amazonaws.com/hands-1.png" alt="love-heart-img" />
         <div class="card">
             <h2>RSVP</h2>
             <div class="form-container">
@@ -26,8 +26,8 @@
                         <input type="email" name="email" id="email">
                     </div>
             </div>
-                    <div class="form-button">
-                        <button class="btn-add" type="submit"><i class="far fa-envelope"></i></button>                    </div>
+                    <div class="wrapper">
+                        <button class="btn-add" type="submit"><a class="send"><span><i class="far fa-envelope"></i></span></a></button>                    </div>
                 </form>
             </div>
         </div>

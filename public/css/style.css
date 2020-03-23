@@ -1,59 +1,126 @@
 @media only screen and (max-width: 600px) {
+    .container {
+        padding-top: 20px;
+    }
+
+    .error-message {
+        padding: 1%;
+        padding-bottom: 1%;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .container {
+        padding-top: 80px;
+    }
+
+    .error-message {
+        padding: 2%;
+        padding-bottom: 2%;
+    }
+}
+
+
 body {
     height: 100vh;
     width: 100vw;
+    overflow: hidden;
     margin: 0;
+    padding: 0;
     font-family: 'Quicksand', sans-serif;
-
 }
 
+.container {
 
-.background {
-    position: relative;
+    width: 100%;
     height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+   
+
+ 
 }
 
-.header-container {
+#love-heart-img {
+    margin: 0 auto;
+    width: 300px;
+}
+
+.container h2, .container h3 {
+    text-align: center;
+}
+
+.wrapper{
+    text-align: center;
+  }
+
+  button {
+      border: none;
+      background: white;
+  }
+
+  .send {
+    width: 100px;
+  }
+
+  .rsvp {
+      width: 200px;
+  }
+
+  .email-us {
+      width: 250px;
+  }
+  
+  a{
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: #333;
+    border: 2px solid #333;
+
+    letter-spacing: 2px;
+    text-align: center;
+    position: relative;
+    transition: all .35s;
+  }
+  
+  a span{
+    position: relative;
+    z-index: 2;
+  }
+  
+  a:after{
     position: absolute;
-    top: 25px;
-    width: 38%;
-    text-align: center;
-}
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: rgb(255, 199, 157);
+    transition: all .35s;
+  }
+  
+  a:hover{
+    color: #fff;
+  }
+  
+  a:hover:after{
+    width: 100%;
+  }
 
-.header-container h1 {
-    font-family: 'Quicksand', sans-serif;
-    font-size: 1.6em;
-}
 
 
-.card {
-    height: 50vh;
-    background: rgba(255, 255, 255, 0.4);
-    width: 65vw;
-    text-align: center;
-    padding: 5px;
-    border: 1px solid white;
-    border-radius: 5%;
-}
 
-.card h2 {
-    padding: 0;
-    color: rgb(163, 113, 162)
-}
-
-.form-container {
-    height: 60%;
+  .form-container {
+    height: 45%;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-bottom: 25px;
 }
 
 .form-button {
@@ -65,7 +132,7 @@ body {
 
 .form-el {
     padding-bottom: 10%;
-    font-size: 1.3rem;
+    font-size: 1rem;
     text-align: left; 
 }
 
@@ -84,271 +151,26 @@ body {
 }
 
 .form-el input:focus {
-    border-color: rgb(163, 113, 162);
     color: rgb(241, 174, 171);
+    border-color: rgb(163, 113, 162);
 }
 
 .form-button button {
     font-size: 1.5rem;
-    background: white;
+
     color: rgb(241, 174, 171);
-    padding: 4%;
-    border-radius: 50%;
+    padding: 1%;
+
     text-align: center;
     margin-top: 4%;
-    width: 20%;
+    width: 50px;
 }
 
-#love-heart-img-inv {
-    padding: 5%;
-    border-radius: 20%;
-    width: 300px;
+.error-message {
+    width: 200px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 10px;
+    background: rgba(255, 0, 0, 0.7);
+    border: 5px solid red;
 }
-
-.btn-add {
-    background: rgb(241, 174, 171);
-    border: none;
-}
-
-/* .btn-add i {
-    color: white;
-} */
-
-}
-
-@media only screen and (min-width: 600px) {
-
-    body {
-        height: 100vh;
-        width: 100vw;
-        margin: 0;
-        font-family: 'Quicksand', sans-serif;
-    
-    }
-    
-    
-    .background {
-        position: relative;
-        height: 100%;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .header-container {
-        position: absolute;
-        top: 25px;
-        width: 38%;
-        text-align: center;
-    }
-    
-    .header-container h1 {
-        font-family: 'Quicksand', sans-serif;
-        font-size: 1.6em;
-    }
-    
-    
-    .card {
-        height: 50vh;
-        background: rgba(255, 255, 255, 0.4);
-        width: 65vw;
-        text-align: center;
-        padding: 5px;
-        border: 1px solid white;
-        border-radius: 5%;
-    }
-    
-    .card h2 {
-        padding: 0;
-        color: rgb(163, 113, 162)
-    }
-    
-    .form-container {
-        height: 45%;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .form-button {
-        display: flex;
-        align-items: flex-end;
-        justify-content: center;
-    
-    }
-    
-    .form-el {
-        padding-bottom: 10%;
-        font-size: 1rem;
-        text-align: left; 
-    }
-    
-    
-    .form-el input {
-        outline: 0;
-        border-width: 0 0 2px;
-        border-color: rgb(241, 174, 171);
-        width:100%;
-        box-sizing:border-box;
-        padding: 2%;
-        font-size: 1rem;
-        color: rgb(163, 113, 162);
-        background: none;
-     
-    }
-    
-    .form-el input:focus {
-        border-color: rgb(163, 113, 162);
-        color: rgb(241, 174, 171);
-    }
-    
-    .form-button button {
-        font-size: 1.5rem;
-      
-        color: rgb(241, 174, 171);
-        padding: 1%;
-        border-radius: 50%;
-        text-align: center;
-        margin-top: 4%;
-        width: 45px;
-    }
-    
-    #love-heart-img-inv {
-        padding: 5%;
-        border-radius: 20%;
-        width: 300px;
-    }
-
-    .btn-add {
-        background: rgb(241, 174, 171);
-        border: none;
-    }
-    
-    .btn-add i {
-        color: white;
-    }
-    
-    
-    }
-
-
-
-@media only screen and (min-width: 992px) {
-
-    body {
-        height: 100vh;
-        width: 100vw;
-        margin: 0;
-        font-family: 'Quicksand', sans-serif;
-    
-    }
-    
-    
-    .background {
-        position: relative;
-        height: 100%;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .header-container {
-        position: absolute;
-        top: 25px;
-        width: 38%;
-        text-align: center;
-    }
-    
-    .header-container h1 {
-        font-family: 'Quicksand', sans-serif;
-        font-size: 1.6em;
-    }
-    
-    
-    .card {
-        height: 50vh;
-        background: rgba(255, 255, 255, 0.4);
-        width: 65vw;
-
-        text-align: center;
-        padding: 5px;
-        border: 1px solid white;
-        border-radius: 5%;
-    }
-    
-    .card h2 {
-        padding: 0;
-        color: rgb(163, 113, 162)
-    }
-    
-    .form-container {
-        height: 45%;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .form-button {
-        display: flex;
-        align-items: flex-end;
-        justify-content: center;
-    
-    }
-    
-    .form-el {
-        padding-bottom: 10%;
-        font-size: 1rem;
-        text-align: left; 
-    }
-    
-    
-    .form-el input {
-        outline: 0;
-        border-width: 0 0 2px;
-        border-color: rgb(241, 174, 171);
-        width:100%;
-        box-sizing:border-box;
-        padding: 2%;
-        font-size: 1rem;
-        color: rgb(163, 113, 162);
-        background: none;
-     
-    }
-    
-    .form-el input:focus {
-        color: rgb(241, 174, 171);
-    }
-    
-    .form-button button {
-        font-size: 1.5rem;
-  
-        color: rgb(241, 174, 171);
-        padding: 1%;
-
-        text-align: center;
-        margin-top: 4%;
-        width: 50px;
-    }
-    
-    #love-heart-img-inv {
-        padding: 1%;
-        border-radius: 20%;
-        width: 300px;
-    }
-    
-    
-    
-    }
-
-
-

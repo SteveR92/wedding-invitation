@@ -1,14 +1,16 @@
 <%- include('../includes/head.ejs') %>
-<link rel="stylesheet" href="/css/success.css">
+<link rel="stylesheet" href="/css/style.css">
 
 <body>
-        <div class="background">
+        <div class="container">
                 <img id="love-heart-img" src="https://weddingappsteveroe.s3.us-east-2.amazonaws.com/hands-3.png" alt="love-heart-img" />
                 <div class="success-message">
-                        <h1>Thank you <%= guestId %>.</h1>
-                        <h2>Want to get in contact?</h2>
-                        <button class="btn" type="submit"><a href="mailto:wedding@invite.com?Subject=RE:%20Wedding" target="_top">Send Email</a></button>
+                        <h2>Thank you <%= guestId %>.</h2>
+                        <h3>Want to get in contact?</h3>
+                        <div class="wrapper">
+                        <button class="email-us" type="submit"><a href="mailto:wedding@invite.com?Subject=RE:%20Wedding" target="_top"><span>Send us an Email</span></a></button>
                         <h3>We've sent you an email with all of the details.</h3>
+                        </div>
                 </main>
                         
         </div>

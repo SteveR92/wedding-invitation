@@ -31,7 +31,7 @@ app.use(errorController.get404)
 const mongoURL = `mongodb+srv://${DB_KEY}:${DB_SECRET}@cluster0-jwig0.mongodb.net/test?retryWrites=true&w=majority`
 const herokuURL = `mongodb+srv://${DB_KEY}:${DB_SECRET}@ds161092.mlab.com:61092/heroku_995w3gh7`
 // const PORT = process.env.PORT || 5000
-const url = process.env.MONGODB_URI || herokuURL
+const url = process.env.MONGODB_URI || mongoURL
 // app.listen(PORT, () => console.log(`Server started on port ${PORT}`))
 
 mongoose
