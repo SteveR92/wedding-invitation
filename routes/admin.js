@@ -12,7 +12,16 @@ router.get('/add-guest', adminController.getAddGuest)
 router.post('/add-guest', 
 check('email')
 .isEmail()
-.withMessage('Please enter a valid email.'),
+.withMessage('Please enter a valid email.')
+.custom((value) => {
+    return Guest.findOne({ email: value }).then(guest => {
+        if (guest) {
+            return Promise.reject(
+                'Email already exists.'
+            )
+        }
+    })
+}),
 adminController.postAddGuest)
 
 router.get('/', adminController.getIndex)
